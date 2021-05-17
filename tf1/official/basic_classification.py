@@ -1,3 +1,9 @@
+"""
+Dataset: Fashion-MNIST
+Model: Dense Neural Network (two layers)
+"""
+
+
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
@@ -69,7 +75,7 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(ckpt_path,
 """
 # Save checkpoints in the training
 
-log_path = "./ckpt/model1"
+log_path = "./ckpt/model1"llba
 os.makedirs(log_path, exist_ok=True)
 ckpt_path = log_path + "/" + "cp-{epoch:02d}.ckpt"
 cp_callback = tf.keras.callbacks.ModelCheckpoint(ckpt_path,
