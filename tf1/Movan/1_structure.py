@@ -18,6 +18,7 @@ train = optimizer.minimize(loss)
 init = tf.initialize_all_variables()
 #create tensorflow structure end
 
+"""
 sess = tf.Session()
 sess.run(init) # Very important!
 
@@ -25,4 +26,11 @@ for step in range(201):
     sess.run(train)
     if step % 20 == 0:
         print(step, sess.run(Weights), sess.run(biases))
-
+"""
+with tf.Session() as sess:
+    sess.run(init)
+    # train
+    for step in range(201):
+        sess.run(train)
+        if step % 20 == 0:
+            print(step, sess.run(Weights), sess.run(biases))
