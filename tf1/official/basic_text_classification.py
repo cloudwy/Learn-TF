@@ -1,7 +1,7 @@
 """
 Dataset: IMDB - https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz
 
-Model:
+Model: Sequential(Embedding - GlobalAveragePooling - Dense - Dense)
 
 Relative:
 representation/word2vec.md
@@ -56,6 +56,7 @@ test_data = keras.preprocessing.sequence.pad_sequences(test_data,
                                                        padding='post',
                                                        maxlen=256)
 
+print(train_data.shape)
 print(len(train_data[0]), len(train_data[1]))
 print(train_data[0])
 
@@ -92,6 +93,7 @@ history = model.fit(partial_x_train,
                     batch_size=512,
                     validation_data=(x_val, y_val),
                     verbose=1)
+
 
 # Plot train_loss and val_loss, train_acc and val_acc (review basic_regression.py)
 #%%
